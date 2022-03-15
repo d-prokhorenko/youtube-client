@@ -29,7 +29,10 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "@typescript-eslint/comma-dangle": "off"
       }
     },
     {
