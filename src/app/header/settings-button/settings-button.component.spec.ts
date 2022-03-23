@@ -10,7 +10,7 @@ describe('SettingsButtonComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ SettingsButtonComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

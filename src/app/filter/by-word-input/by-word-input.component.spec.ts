@@ -10,7 +10,7 @@ describe('ByWordInputComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ByWordInputComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

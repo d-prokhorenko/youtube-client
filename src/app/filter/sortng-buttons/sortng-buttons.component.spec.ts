@@ -10,7 +10,7 @@ describe('SortngButtonsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ SortngButtonsComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

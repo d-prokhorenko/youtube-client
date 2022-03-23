@@ -10,7 +10,7 @@ describe('SearchWithButtonComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ SearchWithButtonComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
