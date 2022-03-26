@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import "reset";
+@import "vars";
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  border: none;
+  padding: 4px 24px;
+  color: #fff;
+  background-color: $main-color;
+
+  &--small {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    background-size: 12px 12px;
+    border-radius: 7px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
