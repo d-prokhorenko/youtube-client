@@ -1,0 +1,15 @@
+.filter {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__by {
+    margin-right: 10px;
+  }
+
+  &__buttons {
+    margin-right: 20px;
+  }
+}
