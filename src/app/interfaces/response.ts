@@ -8,7 +8,7 @@ export interface Response {
   items: Video[];
 }
 
-interface Video {
+export interface Video {
   kind: string;
   etag: string;
   id: string;
