@@ -13,6 +13,7 @@ import { SettingsButtonComponent } from './header/settings-button/settings-butto
 import { SearchComponent } from './search/search.component';
 import { SearchItemComponent } from './search/search-item/search-item.component';
 import { SearchResultsComponent } from './search/search-results/search-results.component';
+import { LoginComponent } from './header/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SearchResultsComponent } from './search/search-results/search-results.c
     SearchComponent,
     SearchItemComponent,
     SearchResultsComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
