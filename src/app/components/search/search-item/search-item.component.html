@@ -5,19 +5,33 @@
     alt="search item image"
   />
   <ul class="search-item__info">
-    <li class="search-item__info-item search-item__info-item--views">
+    <li
+      class="search-item__info-item search-item__info-item--views"
+      title="{{ video.statistics.viewCount }}"
+    >
       {{ video.statistics.viewCount }}
     </li>
-    <li class="search-item__info-item search-item__info-item--likes">
+    <li
+      class="search-item__info-item search-item__info-item--likes"
+      title="{{ video.statistics.likeCount }}"
+    >
       {{ video.statistics.likeCount }}
     </li>
-    <li class="search-item__info-item search-item__info-item--dislikes">
+    <li
+      class="search-item__info-item search-item__info-item--dislikes"
+      title="{{ video.statistics.dislikeCount }}"
+    >
       {{ video.statistics.dislikeCount }}
     </li>
-    <li class="search-item__info-item search-item__info-item--comments">
+    <li
+      class="search-item__info-item search-item__info-item--comments"
+      title="{{ video.statistics.commentCount }}"
+    >
       {{ video.statistics.commentCount }}
     </li>
   </ul>
-  <h2 class="search-item__title">{{ video.snippet.title }}</h2>
+  <h2 class="search-item__title" title="{{ video.snippet.title }}">
+    {{ video.snippet.title }}
+  </h2>
   <a href="#" class="search-item__link btn">more...</a>
 </article>
