@@ -15,6 +15,7 @@ import { SearchItemComponent } from './components/search/search-item/search-item
 import { SearchResultsComponent } from './components/search/search-results/search-results.component';
 import { LoginComponent } from './components/header/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { CheckDateDirective } from './directives/check-date.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     SearchItemComponent,
     SearchResultsComponent,
     LoginComponent,
+    CheckDateDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

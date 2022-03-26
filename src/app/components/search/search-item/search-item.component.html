@@ -1,4 +1,4 @@
-<article class="search-item">
+<article [appCheckDate]="video.snippet.publishedAt" class="search-item">
   <img
     class="search-item__img"
     src="{{ video.snippet.thumbnails.medium.url }}"
