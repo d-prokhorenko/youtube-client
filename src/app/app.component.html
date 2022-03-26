@@ -1,3 +1,3 @@
-<app-header></app-header>
-<app-filter></app-filter>
-<app-search></app-search>
+<app-header (search)="searchItems($event)"></app-header>
+<app-filter *ngIf="filter"></app-filter>
+<app-search *ngIf="items.length"></app-search>

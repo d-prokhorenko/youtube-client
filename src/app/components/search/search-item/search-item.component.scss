@@ -49,22 +49,22 @@
 
     &--views::before {
       width: 20px;
-      background-image: url(../../../assets/viewed.svg);
+      background-image: url(../../../../assets/viewed.svg);
     }
 
     &--likes::before {
       width: 20px;
-      background-image: url(../../../assets/liked.svg);
+      background-image: url(../../../../assets/liked.svg);
     }
 
     &--dislikes::before {
       width: 20px;
-      background-image: url(../../../assets/dislike.svg);
+      background-image: url(../../../../assets/dislike.svg);
     }
 
     &--comments::before {
       width: 20px;
-      background-image: url(../../../assets/comments.svg);
+      background-image: url(../../../../assets/comments.svg);
     }
   }
 
