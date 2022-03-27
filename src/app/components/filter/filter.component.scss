@@ -1,6 +1,7 @@
 .filter {
   background-color: #ccc;
   padding: 15px 0;
+
   &__inner {
     display: flex;
     align-items: center;
@@ -13,5 +14,28 @@
 
   &__buttons {
     margin-right: 20px;
+    display: flex;
+  }
+
+  &__buttons-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: #2f80ed;
+    text-decoration: underline;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__search-title {
+    margin-right: 10px;
+    color: #2f80ed;
+  }
+
+  &__search-input {
+    border: none;
   }
 }
