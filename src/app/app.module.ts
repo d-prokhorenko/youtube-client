@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilterComponent } from './components/filter/filter.component';
-import { ByWordInputComponent } from './components/filter/by-word-input/by-word-input.component';
-import { SortngButtonsComponent } from './components/filter/sortng-buttons/sortng-buttons.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/header/logo/logo.component';
 import { SearchWithButtonComponent } from './components/header/search-with-button/search-with-button.component';
@@ -21,8 +19,6 @@ import { CheckDateDirective } from './directives/check-date.directive';
   declarations: [
     AppComponent,
     FilterComponent,
-    ByWordInputComponent,
-    SortngButtonsComponent,
     HeaderComponent,
     LogoComponent,
     SearchWithButtonComponent,
