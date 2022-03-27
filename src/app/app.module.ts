@@ -14,6 +14,7 @@ import { SearchResultsComponent } from './components/search/search-results/searc
 import { LoginComponent } from './components/header/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CheckDateDirective } from './directives/check-date.directive';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CheckDateDirective } from './directives/check-date.directive';
     SearchResultsComponent,
     LoginComponent,
     CheckDateDirective,
+    SearchFilterPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

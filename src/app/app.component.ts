@@ -15,6 +15,8 @@ export class AppComponent implements DoCheck {
 
   filter: boolean = false;
 
+  searchValue: string = '';
+
   ngDoCheck() {
     this.filter = IsFilterVisibleService.filter;
   }
@@ -54,5 +56,9 @@ export class AppComponent implements DoCheck {
           Number(item1.statistics.viewCount)
       );
     }
+  }
+
+  filterBySearch(value: string): void {
+    this.searchValue = value;
   }
 }

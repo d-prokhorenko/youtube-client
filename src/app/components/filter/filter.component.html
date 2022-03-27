@@ -24,7 +24,12 @@
       </div>
       <div class="filter__search">
         <span class="filter__search-title">by word or sentace</span>
-        <input class="filter__search-input" type="text" />
+        <input
+          class="filter__search-input"
+          type="text"
+          (input)="onSearch(searchInput.value)"
+          #searchInput
+        />
       </div>
     </div>
   </div>

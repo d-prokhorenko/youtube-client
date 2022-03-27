@@ -3,5 +3,9 @@
   *ngIf="filter"
   (dateFilter)="filterByDate($event)"
   (viewsFilter)="filterByViews($event)"
+  (searchFilter)="filterBySearch($event)"
 ></app-filter>
-<app-search *ngIf="data" [videos]="data.items"></app-search>
+<app-search
+  *ngIf="data"
+  [videos]="data.items | searchFilter: searchValue"
+></app-search>

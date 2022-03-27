@@ -14,6 +14,8 @@ export class FilterComponent {
 
   @Output() viewsFilter = new EventEmitter<boolean>();
 
+  @Output() searchFilter = new EventEmitter<string>();
+
   onDate(): void {
     this.isDateAscedning = !this.isDateAscedning;
     this.isViewsAscedning = null;
@@ -24,5 +26,9 @@ export class FilterComponent {
     this.isViewsAscedning = !this.isViewsAscedning;
     this.isDateAscedning = null;
     this.viewsFilter.emit(this.isViewsAscedning);
+  }
+
+  onSearch(value: string): void {
+    this.searchFilter.emit(value);
   }
 }
