@@ -18,12 +18,34 @@
   }
 
   &__buttons-btn {
+    position: relative;
+    margin-right: 10px;
+    padding: 0 0 0 10px;
     border: none;
     background-color: transparent;
-    padding: 0;
     color: #2f80ed;
     text-decoration: underline;
-    margin-right: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid transparent;
+      border-width: 0 3px 3px 0;
+    }
+
+    &.desc::before {
+      border-color: #2f80ed;
+      transform: rotate(45deg);
+    }
+
+    &.asc::before {
+      border-color: #2f80ed;
+      transform: rotate(-135deg);
+    }
 
     &:last-child {
       margin-right: 0;
