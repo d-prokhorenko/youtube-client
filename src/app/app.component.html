@@ -1,3 +1,5 @@
-<app-header (search)="searchItems($event)"></app-header>
+<app-header
+  (search)="searchItems($event)"
+></app-header>
 <app-filter *ngIf="filter"></app-filter>
 <app-search *ngIf="data" [videos]="data.items"></app-search>
