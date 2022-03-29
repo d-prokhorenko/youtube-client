@@ -20,7 +20,7 @@ interface Snippet {
   };
   channelTitle: string;
   tags: string[];
-  categoryId: number;
+  categoryId: string;
   liveBroadcastContent: string;
   localized: {
     title: string;
@@ -36,9 +36,9 @@ interface Thumbnails {
 }
 
 interface Statistics {
-  viewCount: number;
-  likeCount: number;
-  dislikeCount: number;
-  favoriteCount: number;
-  commentCount: number;
+  viewCount: string;
+  likeCount: string;
+  dislikeCount: string;
+  favoriteCount: string;
+  commentCount: string;
 }
