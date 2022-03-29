@@ -1,9 +1,8 @@
 import { Component, DoCheck } from '@angular/core';
 
-import { response } from './response.mock';
-import { Response } from './interfaces/response';
-import { Video } from './interfaces/response';
-import { IsFilterVisibleService } from './services/is-filter-visible.service';
+import { Response } from './models/search-response.model';
+import { DataService } from './services/data.service';
+import { FilterService } from './services/filter.service';
 
 @Component({
   selector: 'app-root',
@@ -11,54 +10,17 @@ import { IsFilterVisibleService } from './services/is-filter-visible.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements DoCheck {
-  data: any;
+  data: Response | null = null;
 
-  filter: boolean = false;
+  isFilter: boolean = false;
 
-  searchValue: string = '';
+  constructor(
+    private dataService: DataService,
+    private filterService: FilterService
+  ) {}
 
-  ngDoCheck() {
-    this.filter = IsFilterVisibleService.filter;
-  }
-
-  searchItems(value: string) {
-    console.log(value);
-    this.data = response;
-  }
-
-  filterByDate(isAscending: boolean) {
-    if (isAscending) {
-      this.data.items = this.data.items.sort(
-        (item1: Video, item2: Video) =>
-          new Date(item1.snippet.publishedAt).getTime() -
-          new Date(item2.snippet.publishedAt).getTime()
-      );
-    } else {
-      this.data.items = this.data.items.sort(
-        (item1: Video, item2: Video) =>
-          new Date(item2.snippet.publishedAt).getTime() -
-          new Date(item1.snippet.publishedAt).getTime()
-      );
-    }
-  }
-
-  filterByViews(isAscending: boolean) {
-    if (isAscending) {
-      this.data.items = this.data.items.sort(
-        (item1: Video, item2: Video) =>
-          Number(item1.statistics.viewCount) -
-          Number(item2.statistics.viewCount)
-      );
-    } else {
-      this.data.items = this.data.items.sort(
-        (item1: Video, item2: Video) =>
-          Number(item2.statistics.viewCount) -
-          Number(item1.statistics.viewCount)
-      );
-    }
-  }
-
-  filterBySearch(value: string): void {
-    this.searchValue = value;
+  ngDoCheck(): void {
+    this.data = this.dataService.data;
+    this.isFilter = this.filterService.isFilter;
   }
 }

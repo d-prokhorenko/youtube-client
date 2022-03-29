@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IsFilterVisibleService } from 'src/app/services/is-filter-visible.service';
+import { FilterService } from 'src/app/services/filter.service';
 
 @Component({
   selector: 'app-settings-button',
@@ -7,7 +7,9 @@ import { IsFilterVisibleService } from 'src/app/services/is-filter-visible.servi
   styleUrls: ['./settings-button.component.scss'],
 })
 export class SettingsButtonComponent {
+  constructor(private filterService: FilterService) {}
+
   onSettings(): void {
-    IsFilterVisibleService.filter = !IsFilterVisibleService.filter;
+    this.filterService.isFilter = !this.filterService.isFilter;
   }
 }

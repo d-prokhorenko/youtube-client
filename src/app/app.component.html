@@ -1,11 +1,3 @@
-<app-header (search)="searchItems($event)"></app-header>
-<app-filter
-  *ngIf="filter"
-  (dateFilter)="filterByDate($event)"
-  (viewsFilter)="filterByViews($event)"
-  (searchFilter)="filterBySearch($event)"
-></app-filter>
-<app-search
-  *ngIf="data"
-  [videos]="data.items | searchFilter: searchValue"
-></app-search>
+<app-header></app-header>
+<app-filter *ngIf="isFilter"></app-filter>
+<app-search *ngIf="data" [items]="data.items"></app-search>

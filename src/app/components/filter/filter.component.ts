@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-filter',
@@ -10,25 +11,21 @@ export class FilterComponent {
 
   isViewsAscedning: boolean | null = null;
 
-  @Output() dateFilter = new EventEmitter<boolean>();
-
-  @Output() viewsFilter = new EventEmitter<boolean>();
-
-  @Output() searchFilter = new EventEmitter<string>();
+  constructor(private dataService: DataService) {}
 
   onDate(): void {
     this.isDateAscedning = !this.isDateAscedning;
+    this.dataService.filterByDate(this.isDateAscedning);
     this.isViewsAscedning = null;
-    this.dateFilter.emit(this.isDateAscedning);
   }
 
   onViews(): void {
     this.isViewsAscedning = !this.isViewsAscedning;
+    this.dataService.filterByViews(this.isViewsAscedning);
     this.isDateAscedning = null;
-    this.viewsFilter.emit(this.isViewsAscedning);
   }
 
   onSearch(value: string): void {
-    this.searchFilter.emit(value);
+    this.dataService.filterBySearch(value);
   }
 }
