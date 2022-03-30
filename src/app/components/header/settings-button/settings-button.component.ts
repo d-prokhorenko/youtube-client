@@ -7,9 +7,12 @@ import { FilterService } from 'src/app/services/filter.service';
   styleUrls: ['./settings-button.component.scss'],
 })
 export class SettingsButtonComponent {
+  isFilter: boolean = false;
+
   constructor(private filterService: FilterService) {}
 
   onSettings(): void {
-    this.filterService.isFilter = !this.filterService.isFilter;
+    this.isFilter = !this.isFilter;
+    this.filterService.stream$.next(this.isFilter);
   }
 }
