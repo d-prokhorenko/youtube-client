@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Response } from './models/search-response.model';
 import { DataService } from './services/data.service';
@@ -9,7 +9,7 @@ import { FilterService } from './services/filter.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements DoCheck, OnInit {
+export class AppComponent implements OnInit {
   data: Response | null = null;
 
   isFilter: boolean = false;
@@ -23,9 +23,9 @@ export class AppComponent implements DoCheck, OnInit {
     this.filterService.stream$.subscribe((isFilter) => {
       this.isFilter = isFilter;
     });
-  }
 
-  ngDoCheck(): void {
-    this.data = this.dataService.data;
+    this.dataService.stream$.subscribe((data) => {
+      this.data = data;
+    });
   }
 }

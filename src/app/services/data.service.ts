@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Item } from '../models/search-item.model';
 import { Response } from '../models/search-response.model';
 import { response } from '../response.mock';
@@ -11,10 +12,12 @@ export class DataService {
 
   filterSearchValue: string = '';
 
-  getData(value: string): Response {
+  stream$: Subject<Response> = new Subject<Response>();
+
+  getData(value: string): void {
     console.log('Search value:', value);
     this.data = response;
-    return this.data;
+    this.stream$.next(this.data);
   }
 
   filterByDate(isAscending: boolean) {
