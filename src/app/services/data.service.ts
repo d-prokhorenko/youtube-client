@@ -10,9 +10,9 @@ import { response } from '../response.mock';
 export class DataService {
   data: Response | null = null;
 
-  filterSearchValue: string = '';
-
   stream$: Subject<Response> = new Subject<Response>();
+
+  filterSearchValue$: Subject<string> = new Subject<string>();
 
   getData(value: string): void {
     console.log('Search value:', value);
@@ -53,6 +53,6 @@ export class DataService {
   }
 
   filterBySearch(value: string): void {
-    this.filterSearchValue = value;
+    this.filterSearchValue$.next(value);
   }
 }
