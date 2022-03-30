@@ -13,6 +13,6 @@ export class SettingsButtonComponent {
 
   onSettings(): void {
     this.isFilter = !this.isFilter;
-    this.filterService.stream$.next(this.isFilter);
+    this.filterService.isFilterStream$.next(this.isFilter);
   }
 }

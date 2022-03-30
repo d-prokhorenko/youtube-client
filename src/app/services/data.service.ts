@@ -10,14 +10,14 @@ import { response } from '../response.mock';
 export class DataService {
   data: Response | null = null;
 
-  stream$: Subject<Response> = new Subject<Response>();
+  dataStream$: Subject<Response> = new Subject<Response>();
 
   filterSearchValue$: Subject<string> = new Subject<string>();
 
   getData(value: string): void {
     console.log('Search value:', value);
     this.data = response;
-    this.stream$.next(this.data);
+    this.dataStream$.next(this.data);
   }
 
   filterByDate(isAscending: boolean) {

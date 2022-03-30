@@ -20,11 +20,11 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.filterService.stream$.subscribe((isFilter) => {
+    this.filterService.isFilterStream$.subscribe((isFilter) => {
       this.isFilter = isFilter;
     });
 
-    this.dataService.stream$.subscribe((data) => {
+    this.dataService.dataStream$.subscribe((data) => {
       this.data = data;
     });
   }

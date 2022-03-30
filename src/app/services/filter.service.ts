@@ -5,5 +5,5 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class FilterService {
-  stream$: Subject<boolean> = new Subject<boolean>();
+  isFilterStream$: Subject<boolean> = new Subject<boolean>();
 }
