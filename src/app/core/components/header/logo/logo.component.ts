@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logo',
   templateUrl: './logo.component.html',
-  styleUrls: ['./logo.component.scss']
+  styleUrls: ['./logo.component.scss'],
 })
-export class LogoComponent implements OnInit {
+export class LogoComponent {
+  constructor(private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  goToMainPage(): void {
+    this.router.navigate(['']);
   }
-
 }

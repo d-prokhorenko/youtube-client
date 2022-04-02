@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
+import { HeaderComponent } from './core/pages/header/header.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: HeaderComponent },
+  { path: '**', component: ErrorPageComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
