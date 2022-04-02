@@ -5,7 +5,8 @@ import { HeaderComponent } from './core/pages/header/header.component';
 
 const routes: Routes = [
   { path: '', component: HeaderComponent },
-  { path: '**', component: ErrorPageComponent },
+  { path: 'error', component: ErrorPageComponent },
+  { path: '**', redirectTo: 'error' },
 ];
 
 @NgModule({
