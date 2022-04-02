@@ -7,6 +7,8 @@ import { SearchResultsComponent } from './components/search/search-results/searc
 import { CheckDateDirective } from './directives/check-date.directive';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { ItemDetailedComponent } from './pages/item-detailed/item-detailed.component';
+import { ItemStatisticsComponent } from './components/search/search-item/item-statistics/item-statistics.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     SearchItemComponent,
     CheckDateDirective,
     SearchFilterPipe,
+    ItemDetailedComponent,
+    ItemStatisticsComponent,
   ],
   imports: [CommonModule, FormsModule],
   exports: [SearchComponent],
