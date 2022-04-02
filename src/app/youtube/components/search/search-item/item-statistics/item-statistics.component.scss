@@ -6,9 +6,14 @@
   &__item {
     position: relative;
     max-width: 55px;
-    padding-left: 23px;
+    padding-left: 18px;
+    margin-right: 5px;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    &:first-child {
+      padding-left: 23px;
+    }
 
     &::before {
       content: "";
