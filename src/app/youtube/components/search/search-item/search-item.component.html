@@ -4,32 +4,7 @@
     src="{{ item?.snippet?.thumbnails?.medium?.url }}"
     alt="search item image"
   />
-  <ul class="search-item__info">
-    <li
-      class="search-item__info-item search-item__info-item--views"
-      title="{{ item?.statistics?.viewCount }}"
-    >
-      {{ item?.statistics?.viewCount }}
-    </li>
-    <li
-      class="search-item__info-item search-item__info-item--likes"
-      title="{{ item?.statistics?.likeCount }}"
-    >
-      {{ item?.statistics?.likeCount }}
-    </li>
-    <li
-      class="search-item__info-item search-item__info-item--dislikes"
-      title="{{ item?.statistics?.dislikeCount }}"
-    >
-      {{ item?.statistics?.dislikeCount }}
-    </li>
-    <li
-      class="search-item__info-item search-item__info-item--comments"
-      title="{{ item?.statistics?.commentCount }}"
-    >
-      {{ item?.statistics?.commentCount }}
-    </li>
-  </ul>
+  <app-item-statistics [statistics]="item?.statistics"></app-item-statistics>
   <h2 class="search-item__title" title="{{ item?.snippet?.title }}">
     {{ item?.snippet?.title }}
   </h2>

@@ -26,54 +26,10 @@
     margin-bottom: 20px;
   }
 
-  &__info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  &__info-item {
-    position: relative;
-    max-width: 55px;
-    padding-left: 23px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      height: 14px;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      background-repeat: no-repeat;
-    }
-
-    &--views::before {
-      width: 20px;
-      background-image: url(/assets/icons/viewed.svg);
-    }
-
-    &--likes::before {
-      width: 20px;
-      background-image: url(/assets/icons/liked.svg);
-    }
-
-    &--dislikes::before {
-      width: 20px;
-      background-image: url(/assets/icons/dislike.svg);
-    }
-
-    &--comments::before {
-      width: 20px;
-      background-image: url(/assets/icons/comments.svg);
-    }
-  }
-
   &__title {
     color: #4f4f4f;
     text-align: right;
+    margin-top: 20px;
     margin-bottom: 60px;
     white-space: nowrap;
     text-overflow: ellipsis;
