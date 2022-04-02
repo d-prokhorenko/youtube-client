@@ -9,6 +9,7 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { ItemDetailedComponent } from './pages/item-detailed/item-detailed.component';
 import { ItemStatisticsComponent } from './components/search/search-item/item-statistics/item-statistics.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ItemStatisticsComponent } from './components/search/search-item/item-st
     ItemDetailedComponent,
     ItemStatisticsComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CoreModule],
   exports: [SearchComponent],
 })
 export class YoutubeModule {}

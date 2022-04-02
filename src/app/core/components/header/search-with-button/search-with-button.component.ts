@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/youtube/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-with-button',
@@ -9,10 +9,13 @@ import { DataService } from 'src/app/youtube/services/data.service';
 export class SearchWithButtonComponent {
   searchValue: string = '';
 
-  constructor(private dataService: DataService) {}
+  constructor(private router: Router) {}
 
   onSearch(value: string) {
-    this.dataService.getData(value);
-    this.searchValue = '';
+    this.router.navigate(['search'], {
+      queryParams: {
+        value,
+      },
+    });
   }
 }
