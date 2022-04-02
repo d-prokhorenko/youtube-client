@@ -64,7 +64,10 @@
   }
 
   &__description-text {
+    max-height: 240px;
     font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #828282;
   }
 
