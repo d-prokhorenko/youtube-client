@@ -20,7 +20,7 @@ export class DataService {
     this.dataStream$.next(this.data);
   }
 
-  filterByDate(isAscending: boolean) {
+  filterByDate(isAscending: boolean): void {
     if (isAscending) {
       this.data!.items = this.data!.items.sort(
         (item1: Item, item2: Item) =>
@@ -36,7 +36,7 @@ export class DataService {
     }
   }
 
-  filterByViews(isAscending: boolean) {
+  filterByViews(isAscending: boolean): void {
     if (isAscending) {
       this.data!.items = this.data!.items.sort(
         (item1: Item, item2: Item) =>
