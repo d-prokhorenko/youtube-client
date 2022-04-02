@@ -22,14 +22,16 @@ export class CheckDateDirective implements AfterViewInit {
   }
 
   checkDate(): void {
-    const currentDate = Date.now();
-    const videoDate = new Date(this.date).getTime();
-    const interval = currentDate - videoDate;
-    const seconds = interval / 1000;
-    const secondsInOneDay = 86400;
-    const months = Math.floor(seconds / secondsInOneDay / 30);
-    const days = Math.floor(seconds / secondsInOneDay);
+    if (this.date) {
+      const currentDate = Date.now();
+      const videoDate = new Date(this.date).getTime();
+      const interval = currentDate - videoDate;
+      const seconds = interval / 1000;
+      const secondsInOneDay = 86400;
+      const months = Math.floor(seconds / secondsInOneDay / 30);
+      const days = Math.floor(seconds / secondsInOneDay);
 
-    this.color = days < 7 ? 'blue' : months <= 1 ? 'green' : 'red';
+      this.color = days < 7 ? 'blue' : months <= 1 ? 'green' : 'red';
+    }
   }
 }
