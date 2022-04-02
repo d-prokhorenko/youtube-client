@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/youtube/services/data.service';
 
 @Component({
   selector: 'app-filter',

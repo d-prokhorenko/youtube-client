@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Item } from 'src/app/models/search-item.model';
-import { DataService } from 'src/app/services/data.service';
+import { Item } from 'src/app/youtube/models/search-item.model';
+import { DataService } from 'src/app/youtube/services/data.service';
 
 @Component({
   selector: 'app-search-results',

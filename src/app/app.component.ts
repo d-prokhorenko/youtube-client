@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Response } from './models/search-response.model';
-import { DataService } from './services/data.service';
-import { FilterService } from './services/filter.service';
+import { Response } from './youtube/models/search-response.model';
+import { DataService } from './youtube/services/data.service';
+import { FilterService } from './core/services/filter.service';
 
 @Component({
   selector: 'app-root',
