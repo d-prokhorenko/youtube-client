@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-import { FilterComponent } from './components/header/filter/filter.component';
 import { HeaderComponent } from './pages/header/header.component';
+import { FilterComponent } from './components/header/filter/filter.component';
 import { LogoComponent } from './components/header/logo/logo.component';
 import { SearchWithButtonComponent } from './components/header/search-with-button/search-with-button.component';
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
-import { FormsModule } from '@angular/forms';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { AuthModule } from '../auth/auth.module';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
     SettingsButtonComponent,
     FilterComponent,
     HeaderComponent,
+    ErrorPageComponent,
   ],
   imports: [FormsModule, CommonModule, AuthModule],
   exports: [

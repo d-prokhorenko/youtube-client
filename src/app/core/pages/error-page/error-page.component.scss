@@ -1,0 +1,27 @@
+.error-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #828282;
+  font-weight: 700;
+  font-size: 24px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    width: 100px;
+    height: 90px;
+    margin-right: 25px;
+    background-image: url(/assets/404.svg);
+  }
+
+  &__info {
+    max-width: 230px;
+    width: 100%;
+  }
+}
