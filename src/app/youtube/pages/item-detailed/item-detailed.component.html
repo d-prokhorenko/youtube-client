@@ -6,32 +6,28 @@
       </div>
       <img
         class="item-detailed__img"
-        src="assets/video.jpg"
+        src="{{ item?.snippet?.thumbnails?.standard?.url }}"
         alt="item-detailed img"
       />
-      <div class="item-detailed__info" [appCheckDate]="''">
+      <div
+        class="item-detailed__info"
+        [appCheckDate]="item?.snippet?.publishedAt || ''"
+      >
         <div class="item-detailed__top">
-          <h2 class="item-detailed__title">Kuji Podcast #20</h2>
-          <div class="item-detailed__date">Thursday, December 20, 2019</div>
+          <h2 class="item-detailed__title">{{ item?.snippet?.title }}</h2>
+          <div class="item-detailed__date">
+            {{ item?.snippet?.publishedAt | date: "short" }}
+          </div>
         </div>
         <div class="item-detailed__description">
           <div class="item-detailed__description-title">Description:</div>
           <p class="item-detailed__description-text">
-            This Is KuJi Podcast. In this issue, Timur karginov, Andrey Konyaev
-            and Nurlan Saburov discuss the end of 2018: Khabib's fight with
-            McGregor, Kokorin and Mamayev, Urgant's show on channel One, the
-            economic crisis and gifts for loved ones.
+            {{ item?.snippet?.description }}
           </p>
         </div>
         <div class="item-detailed__statistics">
           <app-item-statistics
-            [statistics]="{
-              viewCount: '33265',
-              likeCount: '1173',
-              dislikeCount: '26',
-              favoriteCount: '0',
-              commentCount: '170'
-            }"
+            [statistics]="item?.statistics"
           ></app-item-statistics>
         </div>
       </div>

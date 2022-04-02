@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ItemDetailedComponent } from './pages/item-detailed/item-detailed.component';
 import { ItemStatisticsComponent } from './components/search/search-item/item-statistics/item-statistics.component';
 import { CoreModule } from '../core/core.module';
+import { YoutubeRoutingModule } from './youtube-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { CoreModule } from '../core/core.module';
     ItemDetailedComponent,
     ItemStatisticsComponent,
   ],
-  imports: [CommonModule, FormsModule, CoreModule],
+  imports: [CommonModule, FormsModule, CoreModule, YoutubeRoutingModule],
   exports: [SearchComponent],
 })
 export class YoutubeModule {}

@@ -20,6 +20,11 @@ export class DataService {
     this.dataStream$.next(this.data);
   }
 
+  getItem(id: string): Item | undefined {
+    if (!this.data) return;
+    return this.data.items.find((item) => item.id === id);
+  }
+
   filterByDate(isAscending: boolean): void {
     if (isAscending) {
       this.data!.items = this.data!.items.sort(
