@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FilterService } from 'src/app/core/services/filter.service';
 import { DataService } from 'src/app/youtube/services/data.service';
 
 @Component({
@@ -6,12 +7,23 @@ import { DataService } from 'src/app/youtube/services/data.service';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent {
+export class FilterComponent implements OnInit {
+  isFilter: boolean = false;
+
   isDateAscedning: boolean | null = null;
 
   isViewsAscedning: boolean | null = null;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private filterService: FilterService
+  ) {}
+
+  ngOnInit(): void {
+    this.filterService.isFilterStream$.subscribe((isFilter) => {
+      this.isFilter = isFilter;
+    });
+  }
 
   onDate(): void {
     if (!this.checkData()) return;

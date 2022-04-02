@@ -7,6 +7,7 @@ import { SearchWithButtonComponent } from './components/header/search-with-butto
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from '../auth/auth.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AuthModule } from '../auth/auth.module';
     FilterComponent,
     HeaderComponent,
   ],
-  imports: [FormsModule, AuthModule],
+  imports: [FormsModule, CommonModule, AuthModule],
   exports: [
     LogoComponent,
     SearchWithButtonComponent,

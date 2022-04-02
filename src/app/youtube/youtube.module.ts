@@ -6,6 +6,7 @@ import { SearchItemComponent } from './components/search/search-item/search-item
 import { SearchResultsComponent } from './components/search/search-results/search-results.component';
 import { CheckDateDirective } from './directives/check-date.directive';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     CheckDateDirective,
     SearchFilterPipe,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   exports: [SearchComponent],
 })
 export class YoutubeModule {}
