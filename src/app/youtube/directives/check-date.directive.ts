@@ -12,13 +12,13 @@ import {
 export class CheckDateDirective implements AfterViewInit {
   @Input('appCheckDate') date: string = '';
 
-  class: string = 'red';
+  color: 'blue' | 'green' | 'red' = 'blue';
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
     this.checkDate();
-    this.renderer.addClass(this.el.nativeElement, this.class);
+    this.renderer.setStyle(this.el.nativeElement, 'border-color', this.color);
   }
 
   checkDate(): void {
@@ -30,11 +30,6 @@ export class CheckDateDirective implements AfterViewInit {
     const months = Math.floor(seconds / secondsInOneDay / 30);
     const days = Math.floor(seconds / secondsInOneDay);
 
-    this.class =
-      days < 7
-        ? 'search-item--blue'
-        : months <= 1
-        ? 'search-item--green'
-        : 'search-item--red';
+    this.color = days < 7 ? 'blue' : months <= 1 ? 'green' : 'red';
   }
 }
