@@ -16,7 +16,7 @@
         <div class="item-detailed__top">
           <h2 class="item-detailed__title">{{ item?.snippet?.title }}</h2>
           <div class="item-detailed__date">
-            {{ item?.snippet?.publishedAt | date: "short" }}
+            {{ item?.snippet?.publishedAt | date: "fullDate" }}
           </div>
         </div>
         <div class="item-detailed__description">
