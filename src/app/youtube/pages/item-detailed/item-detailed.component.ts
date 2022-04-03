@@ -18,7 +18,9 @@ export class ItemDetailedComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(({ id }) => {
-      this.item = this.dataService.getItem(id);
+      this.dataService.getItem(id).subscribe((item) => {
+        this.item = item;
+      });
     });
   }
 }

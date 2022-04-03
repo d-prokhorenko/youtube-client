@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 import { Item } from '../models/search-item.model';
 import { Response } from '../models/search-response.model';
-import { response } from '../../response.mock';
 
 @Injectable({
   providedIn: 'root',
@@ -14,14 +15,25 @@ export class DataService {
 
   filterSearchValue$: Subject<string> = new Subject<string>();
 
+  constructor(private http: HttpClient) {}
+
   getData(value: string): void {
-    this.data = response;
-    this.dataStream$.next(this.data);
+    this.http
+      .get<Response>(
+        `https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=10&q=${value}&`
+      )
+      .subscribe((res) => {
+        this.data = res;
+        this.dataStream$.next(this.data);
+      });
   }
 
-  getItem(id: string): Item | undefined {
-    if (!this.data) return;
-    return this.data.items.find((item) => item.id === id);
+  getItem(id: string): Observable<Item> {
+    return this.http
+      .get<Response>(
+        `https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyALYkkvHJFoyOF2uTBn1dRcAn-NoDGEgrQ&part=snippet,statistics`
+      )
+      .pipe(map((item) => item.items[0]));
   }
 
   filterByDate(isAscending: boolean): void {

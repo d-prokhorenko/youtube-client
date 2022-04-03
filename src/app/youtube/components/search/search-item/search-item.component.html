@@ -8,7 +8,7 @@
   <h2 class="search-item__title" title="{{ item?.snippet?.title }}">
     {{ item?.snippet?.title }}
   </h2>
-  <a [routerLink]="['/search', item?.id]" class="search-item__link btn"
+  <a [routerLink]="['/search', item?.id?.videoId]" class="search-item__link btn"
     >more...</a
   >
 </article>

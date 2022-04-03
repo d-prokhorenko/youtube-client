@@ -7,7 +7,9 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
   isAuth: boolean = false;
 
-  authStream$ = new BehaviorSubject(this.isAuth);
+  authStream$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    this.isAuth
+  );
 
   login(): void {
     this.isAuth = true;
