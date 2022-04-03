@@ -15,7 +15,6 @@ export class DataService {
   filterSearchValue$: Subject<string> = new Subject<string>();
 
   getData(value: string): void {
-    console.log('Search value:', value);
     this.data = response;
     this.dataStream$.next(this.data);
   }
