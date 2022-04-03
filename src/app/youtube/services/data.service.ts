@@ -31,7 +31,7 @@ export class DataService {
   getItem(id: string): Observable<Item> {
     return this.http
       .get<Response>(
-        `https://www.googleapis.com/youtube/v3/videos?id=${id}&key=AIzaSyALYkkvHJFoyOF2uTBn1dRcAn-NoDGEgrQ&part=snippet,statistics`
+        `https://www.googleapis.com/youtube/v3/videos?id=${id}&part=snippet,statistics&`
       )
       .pipe(map((item) => item.items[0]));
   }
