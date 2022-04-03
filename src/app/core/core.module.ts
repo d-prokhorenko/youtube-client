@@ -9,6 +9,7 @@ import { SearchWithButtonComponent } from './components/header/search-with-butto
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { AuthModule } from '../auth/auth.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { AuthModule } from '../auth/auth.module';
     HeaderComponent,
     ErrorPageComponent,
   ],
-  imports: [FormsModule, CommonModule, AuthModule],
+  imports: [FormsModule, RouterModule, CommonModule, AuthModule],
   exports: [
     LogoComponent,
     SearchWithButtonComponent,
