@@ -1,10 +1,8 @@
 <div class="search">
-  <input class="search__input" type="text" [(ngModel)]="searchValue" #search />
-  <button
-    class="search__button btn"
-    type="button"
-    (click)="onSearch(search.value)"
-  >
-    search
-  </button>
+  <input
+    class="search__input"
+    type="text"
+    placeholder="search videos"
+    #searchInput
+  />
 </div>
