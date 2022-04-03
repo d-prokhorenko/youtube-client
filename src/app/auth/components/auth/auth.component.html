@@ -1,8 +1,17 @@
-<div class="login">
-  <span class="login__name">Your name</span>
-  <button
-    routerLink="login"
-    class="login__button btn btn--small"
-    type="button"
-  ></button>
+<div class="auth">
+  <span class="auth__name">Your name</span>
+  <ng-container *ngIf="!isAuth; else logoutBtn">
+    <button
+      routerLink="login"
+      class="auth__button--login btn btn--small"
+      type="button"
+    ></button>
+  </ng-container>
+  <ng-template #logoutBtn>
+    <button
+      class="auth__button--logout btn btn--small"
+      type="button"
+      (click)="logOut()"
+    ></button>
+  </ng-template>
 </div>

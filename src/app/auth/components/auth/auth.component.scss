@@ -1,4 +1,4 @@
-.login {
+.auth {
   display: flex;
   align-items: center;
 
@@ -8,6 +8,12 @@
   }
 
   &__button {
-    background-image: url(/assets/icons/login-user.svg);
+    &--login {
+      background-image: url(/assets/icons/login-user.svg);
+    }
+
+    &--logout {
+      background-image: url(/assets/icons/logout.svg);
+    }
   }
 }

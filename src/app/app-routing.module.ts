@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/components/login/login.component';
+import { AuthGuard } from './core/guards/auth.guard';
 import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
 import { HeaderComponent } from './core/pages/header/header.component';
 import { ItemDetailedComponent } from './youtube/pages/item-detailed/item-detailed.component';
@@ -11,8 +12,15 @@ const routes: Routes = [
     path: '',
     component: HeaderComponent,
     children: [
-      { path: 'search', component: SearchComponent },
-      { path: 'search/:id', component: ItemDetailedComponent },
+      {
+        path: 'search',
+        component: SearchComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'search/:id',
+        component: ItemDetailedComponent,
+      },
       { path: 'login', component: LoginComponent },
     ],
   },
