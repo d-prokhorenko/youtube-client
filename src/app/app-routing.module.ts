@@ -15,13 +15,20 @@ const routes: Routes = [
       {
         path: 'search',
         component: SearchComponent,
+        loadChildren: () =>
+          import('./youtube/youtube.module').then((m) => m.YoutubeModule),
         canActivate: [AuthGuard],
       },
       {
         path: 'search/:id',
         component: ItemDetailedComponent,
       },
-      { path: 'login', component: LoginComponent },
+      {
+        path: 'login',
+        component: LoginComponent,
+        loadChildren: () =>
+          import('./auth/auth.module').then((m) => m.AuthModule),
+      },
     ],
   },
   { path: 'error', component: ErrorPageComponent },
