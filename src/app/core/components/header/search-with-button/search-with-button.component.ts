@@ -1,7 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
-import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import {
+  map,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+} from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 import { DataService } from 'src/app/youtube/services/data.service';
@@ -26,13 +31,12 @@ export class SearchWithButtonComponent implements OnInit {
       .pipe(
         map((e: InputEvent) => (e.target as HTMLInputElement).value.trim()),
         debounceTime(1000),
-        distinctUntilChanged()
+        distinctUntilChanged(),
+        filter((v) => v.length > 2 && this.auth.isAuthenticated())
       )
       .subscribe((value) => {
-        if (this.auth.isAuthenticated() && value.length > 2) {
-          this.dataService.getData(value);
-          this.router.navigate(['search']);
-        }
+        this.dataService.getData(value);
+        this.router.navigate(['search']);
       });
   }
 }
