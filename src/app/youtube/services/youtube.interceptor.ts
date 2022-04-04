@@ -11,7 +11,7 @@ export class YoutubeInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const apiKey = 'key=AIzaSyALYkkvHJFoyOF2uTBn1dRcAn-NoDGEgrQ';
+    const apiKey = 'key=AIzaSyAUPVewMrPpeGvnPdmTU-l8ePI5WIZHfpM';
     const cloned = req.clone({
       url: req.url + apiKey,
     });

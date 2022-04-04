@@ -24,7 +24,7 @@ export class SearchWithButtonComponent implements OnInit {
   ngOnInit(): void {
     fromEvent<InputEvent>(this.searchInput?.nativeElement, 'input')
       .pipe(
-        map((e: InputEvent) => (e.target as HTMLInputElement).value),
+        map((e: InputEvent) => (e.target as HTMLInputElement).value.trim()),
         debounceTime(1000),
         distinctUntilChanged()
       )
