@@ -20,8 +20,8 @@ export class DataService {
   getData(value: string): void {
     this.http
       .get<Response>(
-        `https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=10&q=${value}&`
-      )
+      `https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=10&q=${value}&`
+    )
       .subscribe((res) => {
         this.data = res;
         this.dataStream$.next(this.data);
@@ -31,8 +31,8 @@ export class DataService {
   getItem(id: string): Observable<Item> {
     return this.http
       .get<Response>(
-        `https://www.googleapis.com/youtube/v3/videos?id=${id}&part=snippet,statistics&`
-      )
+      `https://www.googleapis.com/youtube/v3/videos?id=${id}&part=snippet,statistics&`
+    )
       .pipe(map((item) => item.items[0]));
   }
 
