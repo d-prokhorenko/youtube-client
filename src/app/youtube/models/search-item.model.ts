@@ -1,3 +1,11 @@
+export interface Video {
+  kind: string;
+  etag: string;
+  id: string;
+  snippet: Snippet;
+  statistics: Statistics;
+}
+
 export interface Item {
   kind: string;
   etag: string;
@@ -41,7 +49,7 @@ interface Thumbnails {
 export interface Statistics {
   viewCount: string;
   likeCount: string;
-  dislikeCount: string;
+  dislikeCount?: string;
   favoriteCount: string;
   commentCount: string;
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Item } from 'src/app/youtube/models/search-item.model';
+import { Video } from 'src/app/youtube/models/search-item.model';
 
 @Component({
   selector: 'app-search-item',
@@ -7,5 +7,5 @@ import { Item } from 'src/app/youtube/models/search-item.model';
   styleUrls: ['./search-item.component.scss'],
 })
 export class SearchItemComponent {
-  @Input() item: Item | null = null;
+  @Input() item: Video | null = null;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Item } from '../../models/search-item.model';
+import { Video } from '../../models/search-item.model';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./item-detailed.component.scss'],
 })
 export class ItemDetailedComponent implements OnInit {
-  item: Item | undefined = undefined;
+  item: Video | undefined = undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,9 +18,7 @@ export class ItemDetailedComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(({ id }) => {
-      this.dataService.getItem(id).subscribe((item) => {
-        this.item = item;
-      });
+      this.item = this.dataService.getItem(id);
     });
   }
 }
