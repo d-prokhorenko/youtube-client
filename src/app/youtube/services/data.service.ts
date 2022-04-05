@@ -20,9 +20,14 @@ export class DataService {
 
   getData(value: string): void {
     this.http
-      .get<Response>(
-        `https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=10&q=${value}&`
-      )
+      .get<Response>('https://www.googleapis.com/youtube/v3/search', {
+        params: {
+          type: 'video',
+          part: 'snippet',
+          maxResults: 10,
+          q: value,
+        },
+      })
       .pipe(
         pluck('items'),
         map((items) => items.map((v) => v.id.videoId).join(',')),
@@ -37,7 +42,13 @@ export class DataService {
 
   getStatistics(ids: string): Observable<Video> {
     return this.http.get<Video>(
-      `https://www.googleapis.com/youtube/v3/videos?id=${ids}&part=snippet,statistics&`
+      `https://www.googleapis.com/youtube/v3/videos`,
+      {
+        params: {
+          id: ids,
+          part: 'snippet,statistics',
+        },
+      }
     );
   }
 
