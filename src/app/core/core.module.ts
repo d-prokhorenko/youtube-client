@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -10,6 +10,14 @@ import { SettingsButtonComponent } from './components/header/settings-button/set
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { RouterModule } from '@angular/router';
 import { AuthComponent } from './components/header/auth/auth.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { YoutubeInterceptor } from './interceptors/youtube.interceptor';
+
+const INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: YoutubeInterceptor,
+  multi: true,
+};
 
 @NgModule({
   declarations: [
@@ -29,5 +37,6 @@ import { AuthComponent } from './components/header/auth/auth.component';
     FilterComponent,
     HeaderComponent,
   ],
+  providers: [INTERCEPTOR_PROVIDER],
 })
 export class CoreModule {}
