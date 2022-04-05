@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { YoutubeModule } from './youtube/youtube.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, YoutubeModule],
+  imports: [BrowserModule, AppRoutingModule, CoreModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

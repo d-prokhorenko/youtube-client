@@ -8,8 +8,8 @@ import { LogoComponent } from './components/header/logo/logo.component';
 import { SearchWithButtonComponent } from './components/header/search-with-button/search-with-button.component';
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { AuthModule } from '../auth/auth.module';
 import { RouterModule } from '@angular/router';
+import { AuthComponent } from './components/header/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +18,10 @@ import { RouterModule } from '@angular/router';
     SettingsButtonComponent,
     FilterComponent,
     HeaderComponent,
+    AuthComponent,
     ErrorPageComponent,
   ],
-  imports: [FormsModule, RouterModule, CommonModule, AuthModule],
+  imports: [FormsModule, RouterModule, CommonModule],
   exports: [
     LogoComponent,
     SearchWithButtonComponent,
