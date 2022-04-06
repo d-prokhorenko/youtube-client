@@ -1,19 +1,65 @@
 <div class="login">
   <div class="container">
     <div class="login__inner">
-      <form class="login__form" (submit)="login()">
+      <form class="login__form" [formGroup]="form" (submit)="submit()">
         <h2 class="login__title">Login</h2>
         <label class="login__label">
           <div class="login__label-title">Login</div>
-          <input class="login__input" type="text" name="login" />
+          <input class="login__input" type="text" formControlName="email" />
+          <ul
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+            class="login__errors"
+          >
+            <li *ngIf="form.get('email')?.errors?.['required']">
+              Please enter a login email
+            </li>
+            <li *ngIf="form.get('email')?.errors?.['email']">
+              The login email is invalid
+            </li>
+          </ul>
         </label>
         <label class="login__label">
           <div class="login__label-title">Password</div>
-          <input class="login__input" type="password" name="password" />
+          <input
+            class="login__input"
+            type="password"
+            formControlName="password"
+          />
+          <ul
+            *ngIf="
+              form.get('password')?.invalid && form.get('password')?.touched
+            "
+            class="login__errors"
+          >
+            <li
+              *ngIf="form.get('password')?.errors?.['required']; else passwordErrors"
+            >
+              Please enter a password
+            </li>
+            <ng-template #passwordErrors>
+              <ul>
+                <li>Your password isn't strong enough:</li>
+                <li *ngIf="form.get('password')?.errors?.['length']">
+                  {{form.get('password')?.errors?.['length']}}
+                </li>
+                <li *ngIf="form.get('password')?.errors?.['upperLower']">
+                  {{form.get('password')?.errors?.['upperLower']}}
+                </li>
+                <li *ngIf="form.get('password')?.errors?.['letNum']">
+                  {{form.get('password')?.errors?.['letNum']}}
+                </li>
+                <li *ngIf="form.get('password')?.errors?.['special']">
+                  {{form.get('password')?.errors?.['special']}}
+                </li>
+              </ul>
+            </ng-template>
+          </ul>
         </label>
         <div class="login__buttons">
           <a class="login__registration">Registration</a>
-          <button class="login__button btn" type="submit">Login</button>
+          <button class="login__button btn" type="submit" [disabled]="false">
+            Login
+          </button>
         </div>
       </form>
     </div>
