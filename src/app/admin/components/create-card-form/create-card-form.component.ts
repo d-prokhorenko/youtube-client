@@ -20,6 +20,7 @@ export class CreateCardFormComponent implements OnInit {
       description: new FormControl('', [Validators.maxLength(255)]),
       imgLink: new FormControl('', [Validators.required, MyValidator.url]),
       videoLink: new FormControl('', [Validators.required, MyValidator.url]),
+      date: new FormControl('', [Validators.required, MyValidator.date]),
     });
   }
 

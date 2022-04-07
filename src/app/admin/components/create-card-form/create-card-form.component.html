@@ -92,6 +92,25 @@
     </li>
   </ul>
 
+  <label for="date" class="card-form__label">Date</label>
+  <input
+    formControlName="date"
+    id="date"
+    class="card-form__input"
+    type="date"
+  />
+  <ul
+    *ngIf="form.get('date')?.errors && form.get('date')?.touched"
+    class="card-form__errors"
+  >
+    <li *ngIf="form.get('date')?.errors?.['required']">
+      Please enter a creation date
+    </li>
+    <li *ngIf="form.get('date')?.errors?.['date']">
+      an entered date should now be in the future
+    </li>
+  </ul>
+
   <div class="card-form__button-box">
     <button
       class="card-form__button btn"
