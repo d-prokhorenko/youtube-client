@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { AuthComponent } from './components/header/auth/auth.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { YoutubeInterceptor } from './interceptors/youtube.interceptor';
+import { AdminModule } from '../admin/admin.module';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -29,7 +30,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     AuthComponent,
     ErrorPageComponent,
   ],
-  imports: [FormsModule, RouterModule, CommonModule],
+  imports: [FormsModule, RouterModule, CommonModule, AdminModule],
   exports: [
     LogoComponent,
     SearchWithButtonComponent,

@@ -1,0 +1,47 @@
+.card-form {
+  width: 430px;
+  padding: 15px 25px;
+  background-color: #f2f2f2;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-size: 10px;
+    color: #828282;
+  }
+
+  &__input {
+    width: 100%;
+    height: 35px;
+    background-color: #e0e0e0;
+    border: 1px solid transparent;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    &.ng-invalid.ng-touched {
+      border-color: red;
+    }
+  }
+
+  &__errors {
+    font-size: 0.8em;
+    color: red;
+  }
+
+  &__button-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+  }
+
+  &__button[disabled] {
+    background-color: #ccc;
+  }
+}
