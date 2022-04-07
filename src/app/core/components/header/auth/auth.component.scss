@@ -15,5 +15,10 @@
     &--logout {
       background-image: url(/assets/icons/logout.svg);
     }
+
+    &--admin {
+      margin-right: 5px;
+      background-image: url(/assets/icons/login-user.svg);
+    }
   }
 }

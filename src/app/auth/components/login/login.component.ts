@@ -25,7 +25,9 @@ export class LoginComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.form);
+    if (this.form.valid) {
+      this.login();
+    }
   }
 
   login(): void {
