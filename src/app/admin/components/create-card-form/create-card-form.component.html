@@ -1,14 +1,104 @@
-<form class="card-form">
+<form [formGroup]="form" class="card-form" (submit)="submit()">
   <h2 class="card-form__title">Create new card</h2>
   <label for="title" class="card-form__label">Title</label>
-  <input id="title" class="card-form__input" type="text" />
+  <input
+    formControlName="title"
+    id="title"
+    class="card-form__input"
+    type="text"
+  />
+  <ul
+    *ngIf="form.get('title')?.errors && form.get('title')?.touched"
+    class="card-form__errors"
+  >
+    <li *ngIf="form.get('title')?.errors?.['required']">
+      Please enter a title
+    </li>
+    <li *ngIf="form.get('title')?.errors?.['minlength']">
+      The title is too short: min length
+      {{form.get('title')?.errors?.['minlength']?.['requiredLength']}}
+    </li>
+    <li *ngIf="form.get('title')?.errors?.['maxlength']">
+      The title is too long: max length
+      {{form.get('title')?.errors?.['maxlength']?.['requiredLength']}}
+    </li>
+  </ul>
+
   <label for="description" class="card-form__label">Description</label>
-  <input id="description" class="card-form__input" type="text" />
-  <label for="img" class="card-form__label">Img</label>
-  <input id="img" class="card-form__input" type="text" />
-  <label for="video-link" class="card-form__label">Link video</label>
-  <input id="video-link" class="card-form__input" type="text" />
+  <input
+    formControlName="description"
+    id="description"
+    class="card-form__input"
+    type="text"
+  />
+  <ul
+    *ngIf="form.get('description')?.errors && form.get('description')?.touched"
+    class="card-form__errors"
+  >
+    <li
+      *ngIf="form.get('description')?.errors?.['maxlength']?.['requiredLength']"
+    >
+      <div>The description is too long:</div>
+      <div>
+        max length
+        {{form.get('description')?.errors?.['maxlength']?.['requiredLength']}}
+      </div>
+      <div>
+        actual length
+        {{form.get('description')?.errors?.['maxlength']?.['actualLength']}}
+      </div>
+    </li>
+  </ul>
+
+  <label for="imgLink" class="card-form__label">Img</label>
+  <input
+    formControlName="imgLink"
+    id="imgLink"
+    class="card-form__input"
+    type="text"
+  />
+  <ul
+    *ngIf="form.get('imgLink')?.errors && form.get('imgLink')?.touched"
+    class="card-form__errors"
+  >
+    <li *ngIf="form.get('imgLink')?.errors?.['required']">
+      Please enter a link to the image
+    </li>
+    <li
+      *ngIf="form.get('imgLink')?.errors?.['url'] && !form.get('imgLink')?.errors?.['required']"
+    >
+      The image link is invalid
+    </li>
+  </ul>
+
+  <label for="videoLink" class="card-form__label">Link video</label>
+  <input
+    formControlName="videoLink"
+    id="videoLink"
+    class="card-form__input"
+    type="text"
+  />
+  <ul
+    *ngIf="form.get('videoLink')?.errors && form.get('videoLink')?.touched"
+    class="card-form__errors"
+  >
+    <li *ngIf="form.get('videoLink')?.errors?.['required']">
+      Please enter a link to the video
+    </li>
+    <li
+      *ngIf="form.get('videoLink')?.errors?.['url'] && !form.get('videoLink')?.errors?.['required']"
+    >
+      The video link is invalid
+    </li>
+  </ul>
+
   <div class="card-form__button-box">
-    <button class="card-form__button btn" type="submit">Create card</button>
+    <button
+      class="card-form__button btn"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Create card
+    </button>
   </div>
 </form>

@@ -31,4 +31,15 @@ export class MyValidator {
     }
     return Object.keys(errors).length == 0 ? null : errors;
   }
+
+  static url(control: FormControl): { [key: string]: boolean } | null {
+    const regExp =
+      /(^https?:\/\/)?[a-z0-9~_\-\.]+\.[a-z]{2,9}(\/|:|\?[!-~]*)?$/i;
+    if (!regExp.test(control.value)) {
+      return {
+        url: true,
+      };
+    }
+    return null;
+  }
 }
