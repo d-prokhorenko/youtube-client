@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MyValidator } from 'src/app/auth/validators/my.validators';
+import { MyValidator } from 'src/app/core/validators/my.validators';
 
 @Component({
   selector: 'app-create-card-form',

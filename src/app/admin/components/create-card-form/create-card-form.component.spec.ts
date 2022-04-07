@@ -10,7 +10,7 @@ describe('CreateCardFormComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ CreateCardFormComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
