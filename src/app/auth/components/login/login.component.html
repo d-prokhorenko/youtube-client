@@ -57,7 +57,11 @@
         </label>
         <div class="login__buttons">
           <a class="login__registration">Registration</a>
-          <button class="login__button btn" type="submit" [disabled]="false">
+          <button
+            class="login__button btn"
+            type="submit"
+            [disabled]="form.invalid"
+          >
             Login
           </button>
         </div>
