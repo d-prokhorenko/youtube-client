@@ -1,0 +1,88 @@
+.search-item {
+  width: 260px;
+  height: 330px;
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 5px;
+  border-bottom: 5px solid transparent;
+  text-align: center;
+
+  &--green {
+    border-color: green;
+  }
+
+  &--blue {
+    border-color: blue;
+  }
+
+  &--red {
+    border-color: red;
+  }
+
+  &__img {
+    width: 220px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__info-item {
+    position: relative;
+    max-width: 55px;
+    padding-left: 23px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 14px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+    }
+
+    &--views::before {
+      width: 20px;
+      background-image: url(/assets/viewed.svg);
+    }
+
+    &--likes::before {
+      width: 20px;
+      background-image: url(/assets/liked.svg);
+    }
+
+    &--dislikes::before {
+      width: 20px;
+      background-image: url(/assets/dislike.svg);
+    }
+
+    &--comments::before {
+      width: 20px;
+      background-image: url(/assets/comments.svg);
+    }
+  }
+
+  &__title {
+    color: #4f4f4f;
+    text-align: right;
+    margin-bottom: 60px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__link {
+    padding: 8px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

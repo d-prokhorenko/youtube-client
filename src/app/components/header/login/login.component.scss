@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  align-items: center;
+
+  &__name {
+    display: block;
+    margin-right: 10px;
+  }
+
+  &__button {
+    background-image: url(/assets/login-user.svg);
+  }
+}

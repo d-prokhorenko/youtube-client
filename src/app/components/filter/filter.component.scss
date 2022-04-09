@@ -1,0 +1,63 @@
+.filter {
+  background-color: #ccc;
+  padding: 15px 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__by {
+    margin-right: 10px;
+  }
+
+  &__buttons {
+    margin-right: 20px;
+    display: flex;
+  }
+
+  &__buttons-btn {
+    position: relative;
+    margin-right: 10px;
+    padding: 0 0 0 10px;
+    border: none;
+    background-color: transparent;
+    color: #2f80ed;
+    text-decoration: underline;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid transparent;
+      border-width: 0 3px 3px 0;
+    }
+
+    &.desc::before {
+      border-color: #2f80ed;
+      transform: rotate(45deg);
+    }
+
+    &.asc::before {
+      border-color: #2f80ed;
+      transform: rotate(-135deg);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__search-title {
+    margin-right: 10px;
+    color: #2f80ed;
+  }
+
+  &__search-input {
+    border: none;
+  }
+}

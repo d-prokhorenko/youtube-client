@@ -1,0 +1,36 @@
+<div class="filter">
+  <div class="container">
+    <div class="filter__inner">
+      <span class="filter__by">Sorting by:</span>
+      <div class="filter__buttons">
+        <button
+          [class.asc]="isDateAscedning"
+          [class.desc]="isDateAscedning !== null && !isDateAscedning"
+          class="filter__buttons-btn"
+          type="button"
+          (click)="onDate()"
+        >
+          date
+        </button>
+        <button
+          [class.asc]="isViewsAscedning"
+          [class.desc]="isViewsAscedning !== null && !isViewsAscedning"
+          class="filter__buttons-btn"
+          type="button"
+          (click)="onViews()"
+        >
+          count of views
+        </button>
+      </div>
+      <div class="filter__search">
+        <span class="filter__search-title">by word or sentace</span>
+        <input
+          class="filter__search-input"
+          type="text"
+          (input)="onSearch(searchInput.value)"
+          #searchInput
+        />
+      </div>
+    </div>
+  </div>
+</div>
