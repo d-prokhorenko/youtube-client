@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { MyValidator } from 'src/app/core/validators/my.validators';
+import { AddCustomVideo } from 'src/app/redux/actions/custom-video.action';
+import { YoutubeState } from 'src/app/redux/state.model';
 
 @Component({
   selector: 'app-create-card-form',
@@ -9,6 +12,8 @@ import { MyValidator } from 'src/app/core/validators/my.validators';
 })
 export class CreateCardFormComponent implements OnInit {
   form: FormGroup = new FormGroup({});
+
+  constructor(private store: Store<YoutubeState>) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -25,6 +30,8 @@ export class CreateCardFormComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.form);
+    if (this.form.valid) {
+      this.store.dispatch(new AddCustomVideo(this.form.value));
+    }
   }
 }

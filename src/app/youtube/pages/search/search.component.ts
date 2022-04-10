@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { YoutubeState } from 'src/app/redux/state.model';
 import { Video } from '../../models/search-item.model';
 import { DataService } from '../../services/data.service';
 
@@ -13,7 +15,8 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private store: Store<YoutubeState>
   ) {}
 
   ngOnInit(): void {
@@ -24,5 +27,7 @@ export class SearchComponent implements OnInit {
     this.route.queryParams.subscribe(({ value }) =>
       this.dataService.getData(value)
     );
+
+    this.store.select('youtube').subscribe((d) => console.log(d));
   }
 }
