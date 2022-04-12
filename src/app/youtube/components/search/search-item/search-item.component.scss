@@ -1,0 +1,32 @@
+.search-item {
+  width: 260px;
+  height: 330px;
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 5px;
+  border-bottom: 5px solid transparent;
+  text-align: center;
+
+  &__img {
+    width: 220px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    color: #4f4f4f;
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__link {
+    padding: 8px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

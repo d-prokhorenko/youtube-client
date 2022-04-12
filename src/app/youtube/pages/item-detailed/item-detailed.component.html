@@ -1,0 +1,36 @@
+<section class="item-detailed">
+  <div class="container container--big">
+    <div class="item-detailed__inner">
+      <div class="item-detailed__prev">
+        <button class="item-detailed__btn" type="button"></button>
+      </div>
+      <img
+        class="item-detailed__img"
+        src="{{ item?.snippet?.thumbnails?.standard?.url }}"
+        alt="item-detailed img"
+      />
+      <div
+        class="item-detailed__info"
+        [appCheckDate]="item?.snippet?.publishedAt || ''"
+      >
+        <div class="item-detailed__top">
+          <h2 class="item-detailed__title">{{ item?.snippet?.title }}</h2>
+          <div class="item-detailed__date">
+            {{ item?.snippet?.publishedAt | date: "fullDate" }}
+          </div>
+        </div>
+        <div class="item-detailed__description">
+          <div class="item-detailed__description-title">Description:</div>
+          <p class="item-detailed__description-text">
+            {{ item?.snippet?.description }}
+          </p>
+        </div>
+        <div class="item-detailed__statistics">
+          <app-item-statistics
+            [statistics]="item?.statistics"
+          ></app-item-statistics>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

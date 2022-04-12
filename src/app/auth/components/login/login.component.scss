@@ -1,0 +1,56 @@
+.login {
+  margin-top: 45px;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form {
+    max-width: 345px;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: #f2f2f2;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__label-title {
+    font-size: 10px;
+    color: #828282;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 35px;
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5px;
+  }
+
+  &__buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__registration {
+    display: block;
+    margin-right: 10px;
+    color: #2f80ed;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

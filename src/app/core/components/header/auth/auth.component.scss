@@ -1,0 +1,19 @@
+.auth {
+  display: flex;
+  align-items: center;
+
+  &__name {
+    display: block;
+    margin-right: 10px;
+  }
+
+  &__button {
+    &--login {
+      background-image: url(/assets/icons/login-user.svg);
+    }
+
+    &--logout {
+      background-image: url(/assets/icons/logout.svg);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    position: relative;
+    max-width: 55px;
+    padding-left: 18px;
+    margin-right: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &:first-child {
+      padding-left: 23px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 14px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+    }
+
+    &--views::before {
+      width: 20px;
+      background-image: url(/assets/icons/viewed.svg);
+    }
+
+    &--likes::before {
+      width: 20px;
+      background-image: url(/assets/icons/liked.svg);
+    }
+
+    &--dislikes::before {
+      width: 20px;
+      background-image: url(/assets/icons/dislike.svg);
+    }
+
+    &--comments::before {
+      width: 20px;
+      background-image: url(/assets/icons/comments.svg);
+    }
+  }
+}
