@@ -2,7 +2,7 @@ import { Video } from '../youtube/models/search-item.model';
 
 export interface YoutubeState {
   youtube: {
-    videos: Video[];
+    youtubeVideos: Video[];
     customVideos: any[];
   };
 }

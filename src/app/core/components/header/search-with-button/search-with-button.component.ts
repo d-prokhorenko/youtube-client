@@ -9,10 +9,8 @@ import {
   filter,
 } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { SearchVideos } from 'src/app/redux/actions/search.action';
+import { LoadVideos } from 'src/app/redux/actions/search.action';
 import { YoutubeState } from 'src/app/redux/state.model';
-
-import { DataService } from 'src/app/youtube/services/data.service';
 
 @Component({
   selector: 'app-search-with-button',
@@ -24,7 +22,6 @@ export class SearchWithButtonComponent implements OnInit {
     null;
 
   constructor(
-    private dataService: DataService,
     private router: Router,
     private auth: AuthService,
     private store: Store<YoutubeState>
@@ -39,8 +36,7 @@ export class SearchWithButtonComponent implements OnInit {
         filter((v) => v.length > 2 && this.auth.isAuthenticated())
       )
       .subscribe((value) => {
-        this.dataService.getData(value);
-        this.store.dispatch(new SearchVideos(value));
+        this.store.dispatch(new LoadVideos(value));
         this.router.navigate(['search']);
       });
   }

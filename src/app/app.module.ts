@@ -7,6 +7,8 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { youtubeReducer } from './redux/reducers/youtube.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { YoutubeEffect } from './redux/effects/youtube.effect';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +17,7 @@ import { youtubeReducer } from './redux/reducers/youtube.reducer';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
+    EffectsModule.forRoot([YoutubeEffect]),
     StoreModule.forRoot({ youtube: youtubeReducer }),
   ],
   providers: [],

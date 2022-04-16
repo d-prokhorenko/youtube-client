@@ -1,7 +1,10 @@
-import { Action } from '@ngrx/store';
+interface Action {
+  type: string;
+  payload?: any;
+}
 
-export class SearchVideos implements Action {
-  readonly type = 'SEARCH_VIDEOS';
+export class LoadVideos implements Action {
+  readonly type = 'LOAD_VIDEOS';
 
   constructor(public payload: string) {}
 }
