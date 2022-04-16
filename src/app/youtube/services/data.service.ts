@@ -11,10 +11,6 @@ import { Response } from '../models/search-response.model';
   providedIn: 'root',
 })
 export class DataService {
-  data: Video[] = [];
-
-  dataStream$: Subject<Video[]> = new Subject<Video[]>();
-
   filterSearchValue$: Subject<string> = new Subject<string>();
 
   constructor(private http: HttpClient) {}
@@ -47,11 +43,6 @@ export class DataService {
         },
       }
     );
-  }
-
-  getItem(id: string): Video | undefined {
-    if (!this.data) return;
-    return this.data.find((item) => item.id === id);
   }
 
   filterBySearch(value: string): void {

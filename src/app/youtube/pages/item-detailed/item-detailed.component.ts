@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { EMPTY, Observable } from 'rxjs';
+import { getYoutubeVideoById } from 'src/app/redux/selectors/youtube.selector';
+import { YoutubeState } from 'src/app/redux/state.model';
 import { Video } from '../../models/search-item.model';
-import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-item-detailed',
@@ -11,14 +14,15 @@ import { DataService } from '../../services/data.service';
 export class ItemDetailedComponent implements OnInit {
   item: Video | undefined = undefined;
 
+  item$: Observable<Video | undefined> = EMPTY;
+
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService
+    private store: Store<YoutubeState>
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(({ id }) => {
-      this.item = this.dataService.getItem(id);
-    });
+    const id = this.route.snapshot.params['id'];
+    this.item$ = this.store.select(getYoutubeVideoById(id));
   }
 }

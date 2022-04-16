@@ -52,6 +52,6 @@ export class FilterComponent implements OnInit {
   }
 
   checkData(): boolean {
-    return !!this.dataService.data;
+    return true;
   }
 }
