@@ -6,3 +6,10 @@
     <app-search-item [item]="item"></app-search-item>
   </li>
 </ul>
+
+<div style="font-size: 32px; margin-top: 50px">Custom items</div>
+<ul class="search-results">
+  <li *ngFor="let item of customItems" class="search-results__item">
+    <app-custom-item [item]="item"></app-custom-item>
+  </li>
+</ul>
