@@ -1,10 +1,10 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Video } from 'src/app/youtube/models/search-item.model';
+import { Youtube } from '../state.model';
 
-const getYoutubeVideos = createFeatureSelector('youtubeVideos');
+const getYoutubeVideos = createFeatureSelector<Youtube>('youtube');
 
 export const getYoutubeVideoById = (id: string) => {
-  return createSelector(getYoutubeVideos, (videos) => {
-    return (videos as Video[]).find((video: Video) => video.id === id);
+  return createSelector(getYoutubeVideos, (state) => {
+    return state.youtubeVideos.find((video) => video.id === id);
   });
 };
