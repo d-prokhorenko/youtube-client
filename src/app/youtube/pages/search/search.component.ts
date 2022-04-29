@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Response } from '../../models/search-response.model';
+import { Video } from '../../models/search-item.model';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  data: Response | null = null;
+  data: Video[] | null = null;
 
   constructor(
     private dataService: DataService,

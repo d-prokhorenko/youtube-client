@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Item } from 'src/app/youtube/models/search-item.model';
+import { Video } from 'src/app/youtube/models/search-item.model';
 import { DataService } from 'src/app/youtube/services/data.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DataService } from 'src/app/youtube/services/data.service';
 export class SearchResultsComponent implements OnInit {
   filterSearchValue: string = '';
 
-  @Input() items: Item[] = [];
+  @Input() items: Video[] = [];
 
   constructor(private dataService: DataService) {}
 

@@ -1,9 +1,12 @@
-<ng-container *ngIf="data">
+<ng-container *ngIf="data; else loading">
   <div class="search">
     <div class="container">
       <div class="search__inner">
-        <app-search-results [items]="data.items"></app-search-results>
+        <app-search-results [items]="data"></app-search-results>
       </div>
     </div>
   </div>
 </ng-container>
+<ng-template #loading>
+  <div>loading</div>
+</ng-template>

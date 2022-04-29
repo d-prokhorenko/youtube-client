@@ -11,6 +11,7 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { ItemDetailedComponent } from './pages/item-detailed/item-detailed.component';
 import { ItemStatisticsComponent } from './components/search/search-item/item-statistics/item-statistics.component';
 import { CoreModule } from '../core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,14 @@ import { CoreModule } from '../core/core.module';
     ItemDetailedComponent,
     ItemStatisticsComponent,
   ],
-  imports: [CommonModule, FormsModule, RouterModule, CoreModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule,
+    CoreModule,
+  ],
+  providers: [],
   exports: [SearchComponent],
 })
 export class YoutubeModule {}
