@@ -1,17 +1,7 @@
-.login {
-  margin-top: 45px;
-
-  &__inner {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__form {
-    max-width: 345px;
-    width: 100%;
-    padding: 15px 25px;
-    background-color: #f2f2f2;
-  }
+.card-form {
+  width: 430px;
+  padding: 15px 25px;
+  background-color: #f2f2f2;
 
   &__title {
     font-size: 18px;
@@ -22,13 +12,9 @@
   &__label {
     display: block;
     margin-bottom: 5px;
-  }
-
-  &__label-title {
+    margin-left: 10px;
     font-size: 10px;
     color: #828282;
-    margin-bottom: 5px;
-    margin-left: 10px;
   }
 
   &__input {
@@ -37,6 +23,7 @@
     background-color: #e0e0e0;
     border: 1px solid transparent;
     padding: 5px;
+    margin-bottom: 10px;
 
     &.ng-invalid.ng-touched {
       border-color: red;
@@ -46,24 +33,16 @@
   &__errors {
     font-size: 0.8em;
     color: red;
+    margin-bottom: 10px;
   }
 
-  &__buttons {
-    margin-top: 25px;
+  &__button-box {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    margin-top: 25px;
   }
 
   &__button[disabled] {
     background-color: #ccc;
-  }
-
-  &__registration {
-    display: block;
-    margin-right: 10px;
-    color: #2f80ed;
-    text-decoration: underline;
-    cursor: pointer;
   }
 }

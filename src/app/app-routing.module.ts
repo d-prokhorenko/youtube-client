@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin/pages/admin/admin.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
@@ -28,6 +29,12 @@ const routes: Routes = [
         component: LoginComponent,
         loadChildren: () =>
           import('./auth/auth.module').then((m) => m.AuthModule),
+      },
+      {
+        path: 'admin',
+        component: AdminComponent,
+        loadChildren: () =>
+          import('./admin/admin.module').then((m) => m.AdminModule),
       },
     ],
   },
