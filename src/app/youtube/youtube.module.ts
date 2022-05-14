@@ -12,6 +12,7 @@ import { ItemDetailedComponent } from './pages/item-detailed/item-detailed.compo
 import { ItemStatisticsComponent } from './components/search/search-item/item-statistics/item-statistics.component';
 import { CoreModule } from '../core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomItemComponent } from './components/custom-item/custom-item.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     SearchFilterPipe,
     ItemDetailedComponent,
     ItemStatisticsComponent,
+    CustomItemComponent,
   ],
   imports: [
     CommonModule,

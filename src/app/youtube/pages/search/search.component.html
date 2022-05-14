@@ -2,7 +2,10 @@
   <div class="search">
     <div class="container">
       <div class="search__inner">
-        <app-search-results [items]="data"></app-search-results>
+        <app-search-results
+          [items]="data"
+          [customItems]="customVideos"
+        ></app-search-results>
       </div>
     </div>
   </div>

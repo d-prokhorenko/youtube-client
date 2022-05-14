@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { FilterService } from 'src/app/core/services/filter.service';
+import {
+  FilterByDate,
+  FilterByViews,
+} from 'src/app/redux/actions/filter.action';
+import { YoutubeState } from 'src/app/redux/state.model';
 import { DataService } from 'src/app/youtube/services/data.service';
 
 @Component({
@@ -16,7 +22,8 @@ export class FilterComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private filterService: FilterService
+    private filterService: FilterService,
+    private store: Store<YoutubeState>
   ) {}
 
   ngOnInit(): void {
@@ -28,14 +35,14 @@ export class FilterComponent implements OnInit {
   onDate(): void {
     if (!this.checkData()) return;
     this.isDateAscedning = !this.isDateAscedning;
-    this.dataService.filterByDate(this.isDateAscedning);
+    this.store.dispatch(new FilterByDate(this.isDateAscedning));
     this.isViewsAscedning = null;
   }
 
   onViews(): void {
     if (!this.checkData()) return;
     this.isViewsAscedning = !this.isViewsAscedning;
-    this.dataService.filterByViews(this.isViewsAscedning);
+    this.store.dispatch(new FilterByViews(this.isViewsAscedning));
     this.isDateAscedning = null;
   }
 
@@ -45,6 +52,6 @@ export class FilterComponent implements OnInit {
   }
 
   checkData(): boolean {
-    return !!this.dataService.data;
+    return true;
   }
 }
